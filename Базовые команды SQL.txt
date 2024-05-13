@@ -1,5 +1,5 @@
 -- создание таблицы
-CREATE TABLE tableName (
+CREATE TABLE tableName (dfgdfg
   col1 datatype,
   col2 datatype,
   ...

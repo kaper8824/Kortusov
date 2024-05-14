@@ -1,0 +1,73 @@
+CREATE TABLE Customers
+(
+    Id INT,
+    Age INT,
+    FirstName NVARCHAR(20),
+    LastName NVARCHAR(20),
+    Email VARCHAR(30),
+    Phone VARCHAR(20)
+)
+INSERT INTO Customers (id, Age, FirstName, LastName, Email, Phone) VALUES (111, 222, 333 ,111, 222, 333);
+второй способ
+INSERT INTO table1 SET a=111, b=222, c=333;
+Вставка без перечисления столбцов
+INSERT INTO table1 VALUES (111, 222, 333);
+Вставка сразу нескольких строк с помощью INSERT INTO
+INSERT INTO table1 (a, b, c) VALUES 
+    (1, 222, 333), 
+    (2, 555, 666),
+    (3, 555, 333);
+    
+Очистить таблицу
+DELETE FROM `ORDERS`;
+
+удалить строку
+DELETE FROM Shippings WHERE customer = 5;
+
+DELETE FROM `USERS` WHERE `ID` = 2 LIMIT 1;
+
+добавить колонку
+ALTER TABLE Orders
+ADD authorss NVARCHAR(50);
+
+выбрать колонку
+SELECT COUNT(customer_id) FROM Customers;
+
+выбор и вывод
+SELECT manufacturer FROM Company;
+
+удалить колонку
+ALTER TABLE Orders
+DROP COLUMN item;
+
+Объединение таблицу
+Синтаксис самого простого объединения следующий:
+
+SELECT имена_столбцов_таблицы_1, имена_столбцов_таблицы_2 FROM имя_таблицы_1, имя_таблицы_2;
+
+
+
+все вместе
+SELECT имя_таблицы_1.имя_столбца1_таблицы_1,
+            имя_таблицы_1.имя_столбца2_таблицы_1,
+            имя_таблицы_2.имя_столбца1_таблицы_2,
+            имя_таблицы_2.имя_столбца2_таблицы_2
+     FROM
+            имя_таблицы_1, имя_таблицы_2
+     WHERE 
+            имя_таблицы_1.имя_столбца_по_которому_объединяем =
+            имя_таблицы_2.имя_столбца_по_которому_объединяем;
+            
+еще
+ SELECT  имя_таблицы_1.имя_столбца, имя_таблицы_2.имя_столбца
+     FROM  имя_таблицы_1 ТИП ОБЪЕДИНЕНИЯ  имя_таблицы_2
+     ON  условие_объединения;
+
+     
+сортировка
+SELECT * FROM goods ORDER BY title
+
+SELECT * FROM goods ORDER BY price DESC
+Сортировка по возрастанию цены будет:
+
+SELECT * FROM goods ORDER BY price ASC
